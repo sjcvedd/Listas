@@ -47,7 +47,7 @@ class Lista{
             aux=aux.sig;
         }
         if (aux.dato == valor){
-            if (aux == L && aux.dato == valor) {
+            if (aux == L && aux.dato == valor){
                 L = L.sig;
             }else{
                 aux2.sig = aux.sig;
@@ -71,19 +71,26 @@ class Lista{
     }
 }
 
-public class ListaSimple {
+class lector{
+    BufferedReader br;
+    lector(){
+        this.br = new BufferedReader(new InputStreamReader(System.in));
+    }
+    String leer() throws IOException{
+        return br.readLine();
+    }
+}
 
-    
+public class ListaSimple {
     public static void main(String[] args) throws IOException{
-       InputStreamReader sr=new InputStreamReader(System.in);
-       BufferedReader br=new BufferedReader(sr);
+       lector br = new lector();
        Lista ls=new Lista();
        char op='S';
        while (op!='n'){
            System.out.print("numero a enlistar: ");
-           ls.insertar(Integer.parseInt(br.readLine()));
+           ls.insertar(Integer.parseInt(br.leer()));
            System.out.print("otro numero?");
-           op=br.readLine().charAt(0);
+           op=br.leer().charAt(0);
        }
        // System.out.println("introduzca valor a eliminar");
        // int valor = Integer.parseInt(br.readLine());
