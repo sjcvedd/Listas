@@ -25,19 +25,18 @@ class Lista{
         aux=L;
         while (aux.sig!=null)
             aux=aux.sig;
-        }
         aux.sig=nuevo;
-
         }
+    }
     void mostrar(){
         aux=L;
         String dato="";
-        while (aux.sig!=null)
+        while (aux!=null)
         {
-            dato=dato+ aux.dato+",";
+            dato+=aux.dato+",";
             aux=aux.sig;
         }
-        dato=dato+ aux.dato +".";
+        dato+=".";
         System.out.print("L--->"+dato);
     }
     void eliminar(int valor){
@@ -58,7 +57,6 @@ class Lista{
             System.out.println("valor no encontrado en la lista");
         }
     }
-    
     void buscar(int valor){
         aux=L;
         if(aux!=null){
@@ -77,21 +75,19 @@ public class ListaSimple {
 
     
     public static void main(String[] args) throws IOException{
-        InputStreamReader sr=new InputStreamReader(System.in);
+       InputStreamReader sr=new InputStreamReader(System.in);
        BufferedReader br=new BufferedReader(sr);
        Lista ls=new Lista();
        char op='S';
        while (op!='n'){
            System.out.print("numero a enlistar: ");
            ls.insertar(Integer.parseInt(br.readLine()));
-           System.out.print("otra numero?");
+           System.out.print("otro numero?");
            op=br.readLine().charAt(0);
-           
-           
        }
-        System.out.println("introduzca valor a eliminar");
-        int valor = Integer.parseInt(br.readLine());
-       ls.eliminar(valor);
+       // System.out.println("introduzca valor a eliminar");
+       // int valor = Integer.parseInt(br.readLine());
+       //ls.eliminar(valor);
        ls.mostrar();
     }
 }
