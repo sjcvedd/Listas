@@ -60,7 +60,7 @@ class lista{
     void eliminar(int valor){
         aux=L;
         nodo aux2 = null;
-        while(aux.sig!=L || aux.dato != valor){
+        while(aux.sig!=L && aux.dato != valor){
             aux2=aux;
             aux=aux.sig;
         }
